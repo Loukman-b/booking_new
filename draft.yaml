@@ -1,5 +1,41 @@
 models:
-  # ...
 
-controllers:
-  # ...
+  Package:
+    name: string
+    description: text
+    price: decimal:8,2
+    duration_minutes: integer
+    active: boolean default:true
+    timestamps: true
+
+  TimeSlot:
+    package_id: id foreign
+    start_time: datetime
+    end_time: datetime
+    status: enum:available,booked,cancelled default:available
+    timestamps: true
+
+  Booking:
+    package_id: id foreign
+    time_slot_id: id foreign
+    customer_name: string
+    customer_email: string
+    customer_phone: string nullable
+    price_at_booking: decimal:8,2
+    status: enum:confirmed,cancelled,completed default:confirmed
+    timestamps: true
+
+  Payment:
+    booking_id: id foreign
+    amount: decimal:8,2
+    payment_method: string nullable
+    paid_at: datetime nullable
+    timestamps: true
+
+  Expense:
+    description: string
+    amount: decimal:8,2
+    expense_date: date
+    created_by: id foreign:users.id
+    timestamps: true
+               
