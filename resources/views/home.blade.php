@@ -106,9 +106,9 @@
                     <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
                         Zie welke momenten nog vrij zijn en reserveer direct een plek.
                     </p>
-                    <a href="#tijdsloten" class="inline-block w-full text-center px-4 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                    <button onclick="openPopup('tijdslotenPopup')" class="w-full text-center px-4 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
                         Bekijk tijdsloten
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Card 3: Boek een afspraak -->
@@ -124,9 +124,9 @@
                     <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
                         Vul je gegevens in, kies een pakket en bevestig je boeking. Snel en eenvoudig geregeld.
                     </p>
-                    <a href="#boeken" class="inline-block w-full text-center px-4 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                    <button onclick="openPopup('boekenPopup')" class="w-full text-center px-4 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
                         Nu boeken
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Card 4: Betaling en bevestiging -->
@@ -144,9 +144,9 @@
                     <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
                         Betaal veilig en ontvang meteen je bevestiging van de afspraak.
                     </p>
-                    <a href="#info" class="inline-block w-full text-center px-4 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                    <button onclick="openPopup('betalingPopup')" class="w-full text-center px-4 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
                         Meer info
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -530,5 +530,177 @@
             </div>
         </div>
     </section>
+
+    <!-- Popups -->
+    <!-- Tijdsloten Popup -->
+    <div id="tijdslotenPopup" class="fixed top-20 right-6 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-300 ease-out z-50 opacity-0 translate-x-full pointer-events-none">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="url(#grad-tijd)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs><linearGradient id="grad-tijd" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#60a5fa"/><stop offset="100%" style="stop-color:#1d4ed8"/></linearGradient></defs>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Tijdsloten</h3>
+                </div>
+                <button onclick="closePopup('tijdslotenPopup')" class="text-gray-400 hover:text-gray-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+                Zie real-time welke tijdsloten beschikbaar zijn en kies het moment dat bij je past.
+            </p>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">Real-time beschikbaarheid</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">Geen dubbele boekingen</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">Overzichtelijke kalender</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Boeken Popup -->
+    <div id="boekenPopup" class="fixed top-20 right-6 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-300 ease-out z-50 opacity-0 translate-x-full pointer-events-none">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="url(#grad-boek)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12h6m-6 4h6" stroke="url(#grad-boek)" stroke-width="2" stroke-linecap="round"/>
+                            <defs><linearGradient id="grad-boek" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#60a5fa"/><stop offset="100%" style="stop-color:#1d4ed8"/></linearGradient></defs>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Boeken</h3>
+                </div>
+                <button onclick="closePopup('boekenPopup')" class="text-gray-400 hover:text-gray-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+                Boek snel en eenvoudig een afspraak zonder account aan te maken.
+            </p>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">Geen account nodig</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">Simpel invulformulier</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">Directe bevestiging</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Betaling Popup -->
+    <div id="betalingPopup" class="fixed top-20 right-6 w-96 bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-300 ease-out z-50 opacity-0 translate-x-full pointer-events-none">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none">
+                            <rect x="2" y="5" width="20" height="14" rx="2" stroke="url(#grad-bet)" stroke-width="2"/>
+                            <path d="M2 10h20" stroke="url(#grad-bet)" stroke-width="2"/>
+                            <defs><linearGradient id="grad-bet" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#60a5fa"/><stop offset="100%" style="stop-color:#1d4ed8"/></linearGradient></defs>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Betaling</h3>
+                </div>
+                <button onclick="closePopup('betalingPopup')" class="text-gray-400 hover:text-gray-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+                Veilig en betrouwbaar betalen met directe bevestiging van je afspraak.
+            </p>
+            <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">iDEAL, creditcard, PayPal</span>
+                </li>
+                <li class="flex items-start gap-2">
+                    <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-700">E-mail bevestiging & factuur</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript voor popups -->
+    <script>
+        function openPopup(popupId) {
+            // Sluit eerst alle andere popups
+            closeAllPopups();
+            
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                // Toon popup met animatie
+                popup.classList.remove('opacity-0', 'translate-x-full', 'pointer-events-none');
+                popup.classList.add('opacity-100', 'translate-x-0', 'pointer-events-auto');
+                
+                // Auto close na 8 seconden
+                setTimeout(() => {
+                    closePopup(popupId);
+                }, 8000);
+            }
+        }
+
+        function closePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.classList.remove('opacity-100', 'translate-x-0', 'pointer-events-auto');
+                popup.classList.add('opacity-0', 'translate-x-full', 'pointer-events-none');
+            }
+        }
+
+        function closeAllPopups() {
+            const popups = ['tijdslotenPopup', 'boekenPopup', 'betalingPopup'];
+            popups.forEach(popupId => closePopup(popupId));
+        }
+
+        // Sluit popup met ESC toets
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeAllPopups();
+            }
+        });
+    </script>
 </body>
 </html>
