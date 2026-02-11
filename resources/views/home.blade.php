@@ -346,5 +346,135 @@
             </div>
         </div>
     </section>
+
+    <!-- Onze Pakketten -->
+    <section class="py-20" style="background-color: #01132B;" id="pakketten">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">
+                    Onze pakketten
+                </h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Kies een Pakket die past bij jouw wensen. Alle prijzen zijn vooraf duidelijk
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Basic Pakket -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-900 text-center mb-6">Basic</h3>
+                        
+                        <div class="text-center mb-8">
+                            <span class="text-5xl font-bold text-gray-900">$5000</span>
+                            <span class="text-xl text-gray-600"> p/m</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                        </ul>
+
+                        <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                            Nu boeken
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pro Pakket (Featured) -->
+                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:scale-105 transition duration-300 relative border-4 border-blue-500">
+                    <div class="absolute top-0 left-0 right-0 bg-blue-600 text-white text-center py-2 text-sm font-semibold">
+                        Meest Populair
+                    </div>
+                    <div class="p-8 pt-12">
+                        <h3 class="text-3xl font-bold text-blue-600 text-center mb-6">Pro</h3>
+                        
+                        <div class="text-center mb-8">
+                            <span class="text-5xl font-bold text-gray-900">$500</span>
+                            <span class="text-xl text-blue-600"> p/m</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                        </ul>
+
+                        <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                            Nu boeken
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Premium Pakket -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-center mb-6" style="color: #FF8C00;">Premium</h3>
+                        
+                        <div class="text-center mb-8">
+                            <span class="text-5xl font-bold text-gray-900">$5000</span>
+                            <span class="text-xl" style="color: #FF8C00;"> p/m</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                            </li>
+                        </ul>
+
+                        <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                            Nu boeken
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
