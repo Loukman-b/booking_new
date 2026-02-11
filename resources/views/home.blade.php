@@ -366,8 +366,8 @@
                         <h3 class="text-3xl font-bold text-gray-900 text-center mb-6">Basic</h3>
                         
                         <div class="text-center mb-8">
-                            <span class="text-5xl font-bold text-gray-900">$5000</span>
-                            <span class="text-xl text-gray-600"> p/m</span>
+                            <span class="text-5xl font-bold text-gray-900">€49</span>
+                            <span class="text-xl text-gray-600">/maand</span>
                         </div>
 
                         <ul class="space-y-4 mb-8">
@@ -375,24 +375,36 @@
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">Tot 50 boekingen per maand</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">1 medewerker account</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">E-mail notificaties</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Basis kalender overzicht</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">E-mail ondersteuning</span>
                             </li>
                         </ul>
 
                         <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                            Nu boeken
+                            Kies Basic
                         </a>
                     </div>
                 </div>
@@ -406,8 +418,8 @@
                         <h3 class="text-3xl font-bold text-blue-600 text-center mb-6">Pro</h3>
                         
                         <div class="text-center mb-8">
-                            <span class="text-5xl font-bold text-gray-900">$500</span>
-                            <span class="text-xl text-blue-600"> p/m</span>
+                            <span class="text-5xl font-bold text-gray-900">€99</span>
+                            <span class="text-xl text-blue-600">/maand</span>
                         </div>
 
                         <ul class="space-y-4 mb-8">
@@ -415,24 +427,42 @@
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">Tot 200 boekingen per maand</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">Tot 5 medewerker accounts</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">E-mail & SMS notificaties</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Google Calendar integratie</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Basis rapportages & analytics</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Prioriteit ondersteuning</span>
                             </li>
                         </ul>
 
                         <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                            Nu boeken
+                            Kies Pro
                         </a>
                     </div>
                 </div>
@@ -443,8 +473,8 @@
                         <h3 class="text-3xl font-bold text-center mb-6" style="color: #FF8C00;">Premium</h3>
                         
                         <div class="text-center mb-8">
-                            <span class="text-5xl font-bold text-gray-900">$5000</span>
-                            <span class="text-xl" style="color: #FF8C00;"> p/m</span>
+                            <span class="text-5xl font-bold text-gray-900">€199</span>
+                            <span class="text-xl" style="color: #FF8C00;">/maand</span>
                         </div>
 
                         <ul class="space-y-4 mb-8">
@@ -452,24 +482,48 @@
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">Onbeperkte boekingen</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">Onbeperkt medewerker accounts</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
                                 </svg>
-                                <span class="text-gray-700">Uitgebreide afspraak</span>
+                                <span class="text-gray-700">Alle notificatie opties</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Volledige kalender integraties</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Geavanceerde analytics & rapporten</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Eigen branding & huisstijl</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                                <span class="text-gray-700">Dedicated account manager</span>
                             </li>
                         </ul>
 
                         <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                            Nu boeken
+                            Kies Premium
                         </a>
                     </div>
                 </div>
