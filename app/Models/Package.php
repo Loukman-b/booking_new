@@ -17,6 +17,7 @@ class Package extends Model
     protected $fillable = [
         'name',
         'description',
+        'features',
         'price',
         'duration_minutes',
         'active',
@@ -33,6 +34,7 @@ class Package extends Model
             'id' => 'integer',
             'price' => 'decimal:2',
             'active' => 'boolean',
+            'features' => 'array',
         ];
     }
 }

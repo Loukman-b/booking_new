@@ -32,8 +32,27 @@ class DatabaseSeeder extends Seeder
         // Maak pakketten aan
         $packages = collect([
             [
+                'name' => 'Starter',
+                'description' => 'Ideaal voor startende ondernemers die net beginnen met online afspraken plannen.',
+                'features' => [
+                    'Tot 20 boekingen per maand',
+                    'Basis notificaties',
+                    'Simpele kalender',
+                ],
+                'price' => 29.00,
+                'duration_minutes' => 15,
+                'active' => true,
+            ],
+            [
                 'name' => 'Basic',
                 'description' => 'Basis pakket voor kleine bedrijven met tot 50 boekingen per maand, 1 medewerker account en e-mail notificaties.',
+                'features' => [
+                    'Tot 50 boekingen per maand',
+                    '1 medewerker account',
+                    'E-mail notificaties',
+                    'Basis kalender integratie',
+                    'Standaard support',
+                ],
                 'price' => 49.00,
                 'duration_minutes' => 30,
                 'active' => true,
@@ -41,6 +60,14 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Pro',
                 'description' => 'Professioneel pakket voor groeiende bedrijven met tot 200 boekingen per maand, 5 medewerker accounts en SMS notificaties.',
+                'features' => [
+                    'Tot 200 boekingen per maand',
+                    '5 medewerker accounts',
+                    'SMS & e-mail notificaties',
+                    'Geavanceerde kalender integratie',
+                    'Priority support',
+                    'Basis analytics',
+                ],
                 'price' => 99.00,
                 'duration_minutes' => 60,
                 'active' => true,
@@ -48,6 +75,15 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Premium',
                 'description' => 'Premium pakket met alle features: onbeperkte boekingen, onbeperkt medewerkers en dedicated account manager.',
+                'features' => [
+                    'Onbeperkt boekingen',
+                    'Onbeperkt medewerker accounts',
+                    'Alle notificatie opties',
+                    'Volledige kalender integraties',
+                    'Geavanceerde analytics & rapporten',
+                    'Eigen branding & huisstijl',
+                    'Dedicated account manager',
+                ],
                 'price' => 199.00,
                 'duration_minutes' => 90,
                 'active' => true,

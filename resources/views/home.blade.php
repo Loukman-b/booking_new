@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Atlas Booking - Home</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="min-h-screen bg-gray-50">
     <!-- Header -->
@@ -366,83 +367,105 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 @foreach($activePackages as $package)
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
-                        <div class="p-8">
-                            <h3 class="text-3xl font-bold text-center mb-6">{{ $package->name }}</h3>
-                            <div class="text-center mb-8">
-                                <span class="text-5xl font-bold text-gray-900">€{{ $package->price }}</span>
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300 flex flex-col">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3 class="text-3xl font-bold text-center mb-4">{{ $package->name }}</h3>
+                            
+                            <div class="text-center mb-6">
+                                <span class="text-5xl font-bold text-gray-900">€{{ number_format($package->price, 0) }}</span>
                                 <span class="text-xl text-gray-600">/maand</span>
                             </div>
-                            <a href="{{ route('booking.start', ['package' => $package->id]) }}" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+
+                            <p class="text-gray-600 text-center text-sm mb-6">
+                                {{ $package->description }}
+                            </p>
+
+                            @if($package->features && count($package->features) > 0)
+                                <ul class="space-y-3 mb-8 flex-grow">
+                                    @foreach($package->features as $feature)
+                                        <li class="flex items-start gap-3">
+                                            <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                            </svg>
+                                            <span class="text-gray-700">{{ $feature }}</span>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
+                            <a href="{{ route('booking.start', ['package' => $package->id]) }}" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150 mt-auto">
                                 Kies {{ $package->name }}
                             </a>
                         </div>
                     </div>
                 @endforeach
-                @if($morePackages->count())
-                    <template x-data="{ showMore: false }">
-                        <button @click="showMore = !showMore" class="col-span-full mt-4 px-6 py-3 bg-blue-100 text-blue-700 font-semibold rounded-lg hover:bg-blue-200 transition">
-                            <span x-show="!showMore">Meer pakketten laten zien</span>
-                            <span x-show="showMore">Minder pakketten tonen</span>
-                        </button>
-                        <div x-show="showMore" class="col-span-full grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-                            @foreach($morePackages as $package)
-                                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
-                                    <div class="p-8">
-                                        <h3 class="text-3xl font-bold text-center mb-6">{{ $package->name }}</h3>
-                                        <div class="text-center mb-8">
-                                            <span class="text-5xl font-bold text-gray-900">€{{ $package->price }}</span>
-                                            <span class="text-xl text-gray-600">/maand</span>
-                                        </div>
-                                        <a href="{{ route('booking.start', ['package' => $package->id]) }}" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                                            Kies {{ $package->name }}
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </template>
-                @endif
-                                <span class="text-gray-700">Onbeperkt medewerker accounts</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Alle notificatie opties</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Volledige kalender integraties</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Geavanceerde analytics & rapporten</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Eigen branding & huisstijl</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Dedicated account manager</span>
-                            </li>
-                        </ul>
+            </div>
 
-                        <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                            Kies Premium
-                        </a>
+            @if($morePackages->count() > 0)
+                <div class="mt-12" x-data="{ showMore: false }">
+                    <div x-show="showMore" 
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 transform scale-95"
+                         x-transition:enter-end="opacity-100 transform scale-100"
+                         x-transition:leave="transition ease-in duration-200"
+                         x-transition:leave-start="opacity-100 transform scale-100"
+                         x-transition:leave-end="opacity-0 transform scale-95"
+                         class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+                        @foreach($morePackages as $package)
+                            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300 flex flex-col">
+                                <div class="p-8 flex flex-col flex-grow">
+                                    <h3 class="text-3xl font-bold text-center mb-4">{{ $package->name }}</h3>
+                                    
+                                    <div class="text-center mb-6">
+                                        <span class="text-5xl font-bold text-gray-900">€{{ number_format($package->price, 0) }}</span>
+                                        <span class="text-xl text-gray-600">/maand</span>
+                                    </div>
+
+                                    <p class="text-gray-600 text-center text-sm mb-6">
+                                        {{ $package->description }}
+                                    </p>
+
+                                    @if($package->features && count($package->features) > 0)
+                                        <ul class="space-y-3 mb-8 flex-grow">
+                                            @foreach($package->features as $feature)
+                                                <li class="flex items-start gap-3">
+                                                    <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                                    </svg>
+                                                    <span class="text-gray-700">{{ $feature }}</span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
+                                    <a href="{{ route('booking.start', ['package' => $package->id]) }}" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150 mt-auto">
+                                        Kies {{ $package->name }}
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="text-center">
+                        <button @click="showMore = !showMore" class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition duration-150 shadow-lg">
+                            <span x-show="!showMore" class="flex items-center gap-2 justify-center">
+                                <span>Bekijk meer pakketten</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </span>
+                            <span x-show="showMore" class="flex items-center gap-2 justify-center">
+                                <span>Verberg pakketten</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                                </svg>
+                            </span>
+                        </button>
                     </div>
                 </div>
-            </div>
+            @endif
+        </div>
+    </section>
         </div>
     </section>
 
@@ -619,7 +642,7 @@
     </script>
 
     <!-- Footer -->
-    <footer class="py-12" style="background-color: #01132B;">
+    <footer class="py-12" style="background-color: #02183A;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Contact -->

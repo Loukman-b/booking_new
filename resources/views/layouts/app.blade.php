@@ -14,11 +14,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo/Bedrijfsnaam -->
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold">
-                        <span class="text-blue-600">Atlas</span>
-                        <span class="text-black">Booking</span>
-                    </h1>
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset('images/atlas_logo .jpg') }}" 
+                         alt="Atlas Logo" 
+                         class="h-10 w-auto">
+                    <a href="{{ url('/') }}" class="text-2xl font-bold hover:opacity-80 transition-opacity">
+                        <h1>
+                            <span class="text-blue-600">Atlas</span>
+                            <span class="text-black">Booking</span>
+                        </h1>
+                    </a>
                 </div>
                 <!-- Inloggen knop -->
                 <div>
