@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\TimeSlots\Tables;
 
+use App\Enums\TimeSlotStatus;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -23,6 +24,13 @@ class TimeSlotsTable
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (TimeSlotStatus $state): string => match ($state) {
+                        TimeSlotStatus::AVAILABLE => 'success',
+                        TimeSlotStatus::BOOKED => 'warning',
+                        TimeSlotStatus::CANCELLED => 'danger',
+                    })
+                    ->formatStateUsing(fn (TimeSlotStatus $state): string => $state->getLabel())
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

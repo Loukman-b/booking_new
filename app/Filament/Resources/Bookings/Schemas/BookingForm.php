@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Bookings\Schemas;
 
+use App\Enums\BookingStatus;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
@@ -28,9 +29,10 @@ class BookingForm
                 TextInput::make('price_at_booking')
                     ->required()
                     ->numeric(),
-                TextInput::make('status')
-                    ->required()
-                    ->default('confirmed'),
+                Select::make('status')
+                    ->options(BookingStatus::getOptions())
+                    ->default(BookingStatus::CONFIRMED->value)
+                    ->required(),
             ]);
     }
 }
