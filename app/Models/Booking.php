@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\BookingStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -37,6 +38,7 @@ class Booking extends Model
             'package_id' => 'integer',
             'time_slot_id' => 'integer',
             'price_at_booking' => 'decimal:2',
+            'status' => BookingStatus::class,
         ];
     }
 

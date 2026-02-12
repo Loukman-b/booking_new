@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\TimeSlotStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -34,6 +35,7 @@ class TimeSlot extends Model
             'package_id' => 'integer',
             'start_time' => 'datetime',
             'end_time' => 'datetime',
+            'status' => TimeSlotStatus::class,
         ];
     }
 

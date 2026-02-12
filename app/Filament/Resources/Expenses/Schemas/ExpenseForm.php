@@ -19,9 +19,6 @@ class ExpenseForm
                     ->numeric(),
                 DatePicker::make('expense_date')
                     ->required(),
-                TextInput::make('created_by')
-                    ->required()
-                    ->numeric(),
             ]);
     }
 }

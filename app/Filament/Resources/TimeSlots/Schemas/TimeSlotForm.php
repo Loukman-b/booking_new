@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources\TimeSlots\Schemas;
 
+use App\Enums\TimeSlotStatus;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class TimeSlotForm
@@ -20,9 +20,10 @@ class TimeSlotForm
                     ->required(),
                 DateTimePicker::make('end_time')
                     ->required(),
-                TextInput::make('status')
-                    ->required()
-                    ->default('available'),
+                Select::make('status')
+                    ->options(TimeSlotStatus::getOptions())
+                    ->default(TimeSlotStatus::AVAILABLE->value)
+                    ->required(),
             ]);
     }
 }
