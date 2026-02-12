@@ -2,6 +2,8 @@
 
 namespace App\Filament\Widgets;
 
+use App\Enums\BookingStatus;
+use App\Enums\TimeSlotStatus;
 use App\Models\Booking;
 use App\Models\TimeSlot;
 use App\Models\Package;
@@ -31,12 +33,12 @@ class BookingStatsOverview extends StatsOverviewWidget
         }
 
         $totalBookings = $bookingsQuery->count();
-        $confirmedBookings = (clone $bookingsQuery)->where('status', 'confirmed')->count();
-        $completedBookings = (clone $bookingsQuery)->where('status', 'completed')->count();
-        $cancelledBookings = (clone $bookingsQuery)->where('status', 'cancelled')->count();
+        $confirmedBookings = (clone $bookingsQuery)->where('status', BookingStatus::CONFIRMED->value)->count();
+        $completedBookings = (clone $bookingsQuery)->where('status', BookingStatus::COMPLETED->value)->count();
+        $cancelledBookings = (clone $bookingsQuery)->where('status', BookingStatus::CANCELLED->value)->count();
 
         // Beschikbare timeslots
-        $availableSlots = TimeSlot::where('status', 'available')
+        $availableSlots = TimeSlot::where('status', TimeSlotStatus::AVAILABLE->value)
             ->where('start_time', '>=', now())
             ->count();
 

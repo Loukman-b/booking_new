@@ -2,6 +2,7 @@
 
 namespace App\Filament\Widgets;
 
+use App\Enums\BookingStatus;
 use App\Models\Booking;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -20,7 +21,7 @@ class RecentBookings extends BaseWidget
             ->query(
                 Booking::query()
                     ->with(['package', 'timeSlot'])
-                    ->where('status', 'confirmed')
+                    ->where('status', BookingStatus::CONFIRMED->value)
                     ->latest()
                     ->limit(10)
             )
@@ -60,11 +61,12 @@ class RecentBookings extends BaseWidget
                     ->label('Status')
                     ->badge()
                     ->toggleable()
-                    ->color(fn (string $state): string => match ($state) {
-                        'confirmed' => 'success',
-                        'cancelled' => 'danger',
-                        'completed' => 'info',
-                    }),
+                    ->color(fn (BookingStatus $state): string => match ($state) {
+                        BookingStatus::CONFIRMED => 'success',
+                        BookingStatus::CANCELLED => 'danger',
+                        BookingStatus::COMPLETED => 'info',
+                    })
+                    ->formatStateUsing(fn (BookingStatus $state): string => $state->getLabel()),
                     
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Geboekt op')
