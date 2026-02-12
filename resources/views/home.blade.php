@@ -702,5 +702,79 @@
             }
         });
     </script>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: #01132B;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <div>
+                                <p class="text-gray-400 text-sm">E-mail</p>
+                                <a href="mailto:info@atlasbooking.nl" class="text-white hover:text-blue-400 transition">info@atlasbooking.nl</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <div>
+                                <p class="text-gray-400 text-sm">Telefoon</p>
+                                <a href="tel:+31207001234" class="text-white hover:text-blue-400 transition">+31 (0)20 700 1234</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adres -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Adres</h3>
+                    <div class="flex items-start gap-3">
+                        <svg class="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <div>
+                            <p class="text-white">Keizersgracht 520</p>
+                            <p class="text-white">1017 EK Amsterdam</p>
+                            <p class="text-white">Nederland</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Openingstijden -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Openingstijden</h3>
+                    <div class="space-y-2">
+                        <div class="flex gap-3 text-white">
+                            <span class="text-gray-400">Maandag - Vrijdag:</span>
+                            <span>09:00 - 18:00</span>
+                        </div>
+                        <div class="flex gap-3 text-white">
+                            <span class="text-gray-400">Zaterdag:</span>
+                            <span>10:00 - 16:00</span>
+                        </div>
+                        <div class="flex gap-3 text-white">
+                            <span class="text-gray-400">Zondag:</span>
+                            <span class="text-red-400">Gesloten</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; {{ date('Y') }} Atlas Booking. Alle rechten voorbehouden.
+                </p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
