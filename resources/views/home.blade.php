@@ -360,134 +360,44 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Basic Pakket -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold text-gray-900 text-center mb-6">Basic</h3>
-                        
-                        <div class="text-center mb-8">
-                            <span class="text-5xl font-bold text-gray-900">€49</span>
-                            <span class="text-xl text-gray-600">/maand</span>
+                @foreach($activePackages as $package)
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
+                        <div class="p-8">
+                            <h3 class="text-3xl font-bold text-center mb-6">{{ $package->name }}</h3>
+                            <div class="text-center mb-8">
+                                <span class="text-5xl font-bold text-gray-900">€{{ $package->price }}</span>
+                                <span class="text-xl text-gray-600">/maand</span>
+                            </div>
+                            <a href="{{ route('booking.start', ['package' => $package->id]) }}" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                                Kies {{ $package->name }}
+                            </a>
                         </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Tot 50 boekingen per maand</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">1 medewerker account</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">E-mail notificaties</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Basis kalender overzicht</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">E-mail ondersteuning</span>
-                            </li>
-                        </ul>
-
-                        <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                            Kies Basic
-                        </a>
                     </div>
-                </div>
-
-                <!-- Pro Pakket (Featured) -->
-                <div class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:scale-105 transition duration-300 relative border-4 border-blue-500">
-                    <div class="absolute top-0 left-0 right-0 bg-blue-600 text-white text-center py-2 text-sm font-semibold">
-                        Meest Populair
-                    </div>
-                    <div class="p-8 pt-12">
-                        <h3 class="text-3xl font-bold text-blue-600 text-center mb-6">Pro</h3>
-                        
-                        <div class="text-center mb-8">
-                            <span class="text-5xl font-bold text-gray-900">€99</span>
-                            <span class="text-xl text-blue-600">/maand</span>
+                @endforeach
+                @if($morePackages->count())
+                    <template x-data="{ showMore: false }">
+                        <button @click="showMore = !showMore" class="col-span-full mt-4 px-6 py-3 bg-blue-100 text-blue-700 font-semibold rounded-lg hover:bg-blue-200 transition">
+                            <span x-show="!showMore">Meer pakketten laten zien</span>
+                            <span x-show="showMore">Minder pakketten tonen</span>
+                        </button>
+                        <div x-show="showMore" class="col-span-full grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+                            @foreach($morePackages as $package)
+                                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
+                                    <div class="p-8">
+                                        <h3 class="text-3xl font-bold text-center mb-6">{{ $package->name }}</h3>
+                                        <div class="text-center mb-8">
+                                            <span class="text-5xl font-bold text-gray-900">€{{ $package->price }}</span>
+                                            <span class="text-xl text-gray-600">/maand</span>
+                                        </div>
+                                        <a href="{{ route('booking.start', ['package' => $package->id]) }}" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
+                                            Kies {{ $package->name }}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Tot 200 boekingen per maand</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Tot 5 medewerker accounts</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">E-mail & SMS notificaties</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Google Calendar integratie</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Basis rapportages & analytics</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Prioriteit ondersteuning</span>
-                            </li>
-                        </ul>
-
-                        <a href="#boeken" class="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-700 hover:from-blue-500 hover:to-blue-800 text-white font-semibold rounded-lg transition duration-150">
-                            Kies Pro
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Premium Pakket -->
-                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold text-center mb-6" style="color: #FF8C00;">Premium</h3>
-                        
-                        <div class="text-center mb-8">
-                            <span class="text-5xl font-bold text-gray-900">€199</span>
-                            <span class="text-xl" style="color: #FF8C00;">/maand</span>
-                        </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-gray-700">Onbeperkte boekingen</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                </svg>
+                    </template>
+                @endif
                                 <span class="text-gray-700">Onbeperkt medewerker accounts</span>
                             </li>
                             <li class="flex items-start gap-3">
